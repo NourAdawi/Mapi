@@ -2,19 +2,18 @@ const searchQuery = document.querySelector(".value_search");
 const searchBtn = document.querySelector(".submit_search");
 const frame = document.querySelector(".iframe");
 const cityName = document.querySelector(".info_area-state");
-const tempertureData = document.querySelector(
-  ".info_area_weather-temperture-data"
-);
-const weatherDescriptionData = document.querySelector(
-  ".info_area_weather-description-data"
-);
+const tempertureData = document.querySelector(".info_area_weather-temperture-data");
+const weatherDescriptionData = document.querySelector(".info_area_weather-description-data");
 const weatherImage = document.querySelector(".info_area_weather-icon-image");
 const container_imgs = document.querySelector(".container_imgs");
 const main_img_top = document.querySelector(".main_img_top");
 const photoText = document.querySelector(".photo-text");
+const menu_lust = document.querySelector(".menu_lust svg");
+const info_area = document.querySelector(".info_area");
 
 searchBtn.addEventListener("click", () => {
   let query = searchQuery.value;
+  info_area.classList.add('show')
   let url = `https://nominatim.openstreetmap.org/search.php?q=${query}&format=jsonv2`;
   getRequest(url, (data) => {
     let lat = data[0].lat;
@@ -31,3 +30,8 @@ searchBtn.addEventListener("click", () => {
     photoText.textContent = `Photos from ${query}`;
   });
 });
+
+
+menu_lust.addEventListener('click',()=>{
+  info_area.classList.toggle('show')
+})
