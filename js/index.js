@@ -8,19 +8,17 @@ const weatherDescriptionData = document.querySelector(".info_area_weather-descri
 const weatherImage = document.querySelector('.info_area_weather-icon-image')
 
 
-
 // map location user firest time
-
 const getStartedLocation = (() => {
   navigator.geolocation.getCurrentPosition((xy) => {
     let { latitude, longitude } = xy.coords;
     let url= `https://nominatim.openstreetmap.org/search.php?q=${latitude},${longitude}&format=jsonv2`;
     sendMap(latitude, longitude);
+
     getWeather(latitude, longitude);
     getRequest(url, (data)=> {
       const cityAndCountry = data[0].display_name.split(' ');
       cityName.textContent= `${cityAndCountry[0]},${cityAndCountry[1]}`;
-      
     })
   });
 })();
@@ -47,8 +45,8 @@ searchBtn.addEventListener("click", () => {
     let lon = data[0].lon;
     lat.toString()
     lon.toString()
-
     sendMap(lat, lon);
+    getImg(query)
     getWeather(lat, lon);
     const cityAndCountry = data[0].display_name.split(' ');
     if(cityAndCountry.length >= 3){
@@ -58,6 +56,30 @@ searchBtn.addEventListener("click", () => {
       }
   });
 });
+
+const container_imgs = document.querySelector('.container_imgs')
+const main_img_top = document.querySelector('.main_img_top')
+
+
+function getImg(query){
+let url = `https://api.unsplash.com/search/photos?query=${query}&client_id=WC50gXbaEOyoD0ivn2KKie6Zi92i4yqvzKxDJxVgUqs`
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = () => {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        let data = JSON.parse(xhr.responseText)
+        main_img_top.src = data.results[0].urls.regular
+        removeChild(container_imgs)
+        for (let p = 1; p < 7; p++) {
+            let img = document.createElement('img')
+            img.src = data.results[p].urls.regular
+            container_imgs.appendChild(img)
+        }
+    }
+};
+xhr.open("GET", url);
+xhr.send();
+}
+
 
 // to select x,y and send
 function sendMap(latitude, longitude) {
@@ -73,7 +95,16 @@ function getWeather(x, y) {
       tempertureData.textContent = `${tmepertureValue} C`;
       weatherDescriptionData.textContent = `${weatherStatus}`;
       weatherImage.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
-      
+      console.log();
+      getImg(data.timezone.split('/')[1])
     }
   );
+}
+
+
+// for remove all content main
+function removeChild(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
 }

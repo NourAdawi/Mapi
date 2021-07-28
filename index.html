@@ -11,7 +11,7 @@
     <header class="header">
       <div class="content_header">
         <div class="logo">
-          <span>mapi</span>
+          <span>mapI</span>
         </div>
         <!-- container search -->
         <div class="search">
@@ -23,33 +23,30 @@
         </div>
         </div>
       </div>
+        <!--  information about the location and the weather. -->
+        <section class="info_area">
+            <div class="img_search">
+                <img src="" class="main_img_top" alt="">
+            </div>
+            <div class="line_info">
+                <h1 class=" info_area-state"></h1>
+            </div>
+            <div class="line_info info_area_weather-temperture">
+                <h2 class="info_area_weather-temperture-title">Temperture</h2>
+                <p class="info_area_weather-temperture-data"></p>
+            </div>
+            <div class="line_info info_area_weather-description">
+                <h2 class="info_area_weather-description-title">Main Weather</h2>
+                <p class="info_area_weather-description-data"></p>
+                <div class="line_info info_area_weather-icon">
+                    <img class="info_area_weather-icon-image" src="http://openweathermap.org/img/wn/03n@2x.png" alt="" />
+                </div>
+            </div>
+            <div class="container_imgs"></div>
+        </section>
     </header>
 
     <main class="main">
-      <!--  information about the location and the weather. -->
-      <section class="info_area">
-        <img
-          src="https://lh5.googleusercontent.com/p/AF1QipM5sVC7X5CgqwRvqI2C-P9sD2ZJqk0pr6OxZBQ9=w408-h271-k-no"
-          alt=""
-          class="info_area-img"
-        />
-        <h1 class="info_area-state">Gaza</h1>
-        <div class="info_area_weather">
-          <div class="info_area_weather-temperture">
-            <h2 class="info_area_weather-temperture-title">Temperture</h2>
-            <p class="info_area_weather-temperture-data"></p>
-          </div>
-          <div class="info_area_weather-description">
-            <h2 class="info_area_weather-description-title">Main Weather</h2>
-            <p class="info_area_weather-description-data"></p>
-          </div>
-          
-          <div class="info_area_weather-icon">
-            <img class="info_area_weather-icon-image" src="http://openweathermap.org/img/wn/03n@2x.png" alt="" />
-          </div>
-        </div>
-      </section>
-
       <!-- Middle: the map. -->
       <section class="map">
         <iframe  class="iframe" src="#" ></iframe>
