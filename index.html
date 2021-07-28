@@ -1,55 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <script src="./js/logic.js" defer></script>
-    <script src="./js/dom.js" defer></script>
-    <script src="./js/index.js" defer></script>
-    <script src="./js/index.test.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    
     <title>Mapi</title>
-</head>
-<body>
-
-
-<header class="header">
-    <div class="content_header">
+  </head>
+  <body>
+    <header class="header">
+      <div class="content_header">
         <div class="logo">
-            <span>mapi</span>
+          <span>mapi</span>
         </div>
         <!-- container search -->
         <div class="search">
-            <div class="input_search">
-                <input type="text" class="value_search" placeholder="Aa..">
-            </div>
-            <div class="submit_search">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve"> <g> <g> <path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667 S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6 c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
-            </div>
+          <div class="input_search">
+            <input type="text" class="value_search" placeholder="Aa.." />
+          </div>
+          <div class="submit_search">
+            <svg
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 512.005 512.005"
+              style="enable-background: new 0 0 512.005 512.005"
+              xml:space="preserve"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667 S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6 c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"
+                  />
+                </g>
+              </g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+            </svg>
+          </div>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
+    <main class="main">
+      <!-- <sectio class="map">
+        
+      </sectio> -->
+      <!--  information about the location and the weather. -->
+      <section class="info_area">
+        <img
+          src="https://lh5.googleusercontent.com/p/AF1QipM5sVC7X5CgqwRvqI2C-P9sD2ZJqk0pr6OxZBQ9=w408-h271-k-no"
+          alt=""
+          class="info_area-img"
+        />
+        <h1 class="info_area-state">Gaza</h1>
+        <div class="info_area_weather">
+          <div class="info_area_weather-temperture">
+            <h2 class="info_area_weather-temperture-title">Temperture</h2>
+            <p class="info_area_weather-temperture-data">31</p>
+          </div>
+          <div class="info_area_weather-description">
+            <h2 class="info_area_weather-description-title">Main Weather</h2>
+            <p class="info_area_weather-description-data">Clear</p>
+          </div>
+          <div class="info_area_weather-icon">
+            <img src="http://openweathermap.org/img/wn/03n@2x.png" alt="" />
+          </div>
+        </div>
+      </section>
 
-<main class="main">
-    <!--  information about the location and the weather. -->
-    <section class="info_area">
-
-    </section>
-
-    <!-- Middle: the map. -->
-    <section class="map">
-
-    </section>
-
-  
-
-</main>
-
-
-
-
-
-</body>
+      <!-- Middle: the map. -->
+      <section class="map">
+        <iframe src="" frameborder="0" class="iframe"></iframe>
+      </section>
+    </main>
+    <script src="./js/logic.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
