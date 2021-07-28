@@ -9,7 +9,7 @@ const cityName= document.querySelector(".info_area-state");
 const getStartedLocation = (() => {
   navigator.geolocation.getCurrentPosition((xy) => {
     let { latitude, longitude } = xy.coords;
-    let url= `https://maps.google.com/maps?q=${latitude},${longitude}&hl=es&z=14&amp&output=embed`;
+    let url=`https://nominatim.openstreetmap.org/search.php?q=${latitude},${longitude}&format=jsonv2`
     sendMap(latitude, longitude);
     getWeather(latitude, longitude);
     getRequest(url, (data)=> {
