@@ -183,3 +183,7 @@ header {
 .header::-webkit-scrollbar-thumb {
   background: rgb(136, 133, 133);
 }
+
+/* .dropout div{
+  display: none;
+} */
