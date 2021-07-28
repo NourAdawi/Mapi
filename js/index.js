@@ -52,25 +52,15 @@ searchBtn.addEventListener("click", () => {
     const cityAndCountry = data[0].display_name.split(' ');
     if(cityAndCountry.length >= 3){
         cityName.textContent= `${cityAndCountry[0]} ${cityAndCountry[1]} ${cityAndCountry[2]}`;
-        console.log('dsdsd')
       }else{
-        
         cityName.textContent= cityAndCountry[0];
-        console.log("aaa")
       }
   });
 });
 
 // to select x,y and send
-const sendMap = (latitude, longitude)=>{
-  frame.src = `https://maps.google.com/maps?q=${latitude},${longitude}&hl=es&z=14&amp&output=embed`
-}
-
-// for remove all content main
-function removeChild(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
+function sendMap(latitude, longitude) {
+  frame.src = `https://maps.google.com/maps?q=${latitude},${longitude}&hl=es&z=14&amp&output=embed`;
 }
 
 function getWeather(x, y) {
