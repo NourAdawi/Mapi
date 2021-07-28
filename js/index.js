@@ -5,6 +5,7 @@ const frame = document.querySelector(".iframe");
 const cityName= document.querySelector(".info_area-state");
 const tempertureData = document.querySelector('.info_area_weather-temperture-data')
 const weatherDescriptionData = document.querySelector(".info_area_weather-description-data")
+const weatherImage = document.querySelector('.info_area_weather-icon-image')
 
 
 
@@ -67,17 +68,12 @@ function getWeather(x, y) {
   getRequest(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${x}&lon=${y}&units=metric&exclude=minutely,hourly,daily&appid=c43c24139452b883e9e837d96c4f3fe2`,
     (data) => {
+      const tmepertureValue = parseInt(data.current.temp);
+      const weatherStatus = data.current.weather[0].main;
+      tempertureData.textContent = `${tmepertureValue} C`;
+      weatherDescriptionData.textContent = `${weatherStatus}`;
+      weatherImage.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
       
-      console.log(data.timezone);
-      console.log("Temperature = ", data.current.temp);
-      if (data.alerts) {
-        console.log("Max Temperature Today = ", data.alerts[0].description);
-      }
-      console.log("Main wither = ", data.current.weather[0].main);
-      console.log(
-        "Weather Icon = ",
-        `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
-      );
     }
   );
 }
