@@ -30,8 +30,3 @@ searchBtn.addEventListener("click", () => {
     photoText.textContent = `Photos from ${query}`;
   });
 });
-
-
-menu_lust.addEventListener('click',()=>{
-  info_area.classList.toggle('show')
-})
