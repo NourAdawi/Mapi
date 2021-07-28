@@ -9,9 +9,9 @@
 
 :root {
   --mainColor: #333;
-  --descriptionColor: #777;
+  --descriptionColor: #ffff;
   --MainFontFamily: "Baloo Chettan 2", cursive;
-  --body: rgba(240, 235, 235, 0.993);
+  --body: rgba(253, 249, 242, 0.993);
   --shadow: rgba(0, 0, 0, 0.3);
 }
 
@@ -36,7 +36,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  margin-top: 10px;
   position: sticky;
   top: 0;
   background-color: var(--body);
@@ -143,8 +142,8 @@ header {
 }
 
 .info_area_weather-icon img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: auto;
   border-radius: 50%;
   box-shadow: 0 2px 5px var(--shadow);
   background-color: rgb(172, 172, 172);
@@ -155,9 +154,17 @@ header {
 }
 
 .container_imgs {
-  margin-top: 20px;
+  margin-top: 7px;
   text-align: center;
   padding: 0.5rem;
+}
+
+.photo-text {
+  text-align: center;
+  margin-top: 0.4rem;
+  font-size: 1.3rem;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(145, 54, 22);
 }
 
 .container_imgs img {
