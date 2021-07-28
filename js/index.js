@@ -1,16 +1,21 @@
 // Dom.js
 const searchQuery = document.querySelector(".value_search");
 const searchBtn = document.querySelector(".submit_search");
+const frame = document.querySelector(".iframe");
+const cityName = document.querySelector(".info_area-state");
 
-// map location user firest time
-let map = document.querySelector(".map");
-window.addEventListener("load", () => {
+// defult location
+const getStartedLocation = (() => {
   navigator.geolocation.getCurrentPosition((xy) => {
     let { latitude, longitude } = xy.coords;
+    let url = `https://nominatim.openstreetmap.org/search.php?q=${latitude},${longitude}&format=jsonv2`;
     sendMap(latitude, longitude);
     getWeather(latitude, longitude);
+    getRequest(url, (data) => {
+      cityName.textContent = data[0].display_name;
+    });
   });
-});
+})();
 
 // logic.js
 
@@ -34,21 +39,12 @@ searchBtn.addEventListener("click", () => {
     let lat = data[0].lat;
     let lon = data[0].lon;
     sendMap(lat, lon);
-    getWeather(lat, lon);
   });
 });
 
 // to select x,y and send
 function sendMap(latitude, longitude) {
-  removeChild(map);
-  map.innerHTML = `<iframe class="iframe" src="https://maps.google.com/maps?q=${latitude},${longitude}&hl=es&z=14&amp;output=embed"></iframe>`;
-}
-
-// for remove all content main
-function removeChild(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
+  frame.src = `https://maps.google.com/maps?q=${latitude},${longitude}&hl=es&z=14&amp&output=embed`;
 }
 
 function getWeather(x, y) {

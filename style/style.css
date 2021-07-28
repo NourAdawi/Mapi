@@ -39,6 +39,7 @@ padding: 20px;
 font-size: 2rem;
 color: coral;
 margin-right: 20px;
+font-weight: bold;
 }
 
 .search{
@@ -61,7 +62,7 @@ border-radius: 20px;
 width: 100%;
 outline: none;
 border: none;
-padding-left: 10px;
+padding-left: 17px;
 font-size: 16px;
 }
 
