@@ -20,14 +20,27 @@ body {
   overflow: hidden;
 }
 
-header {
-  height: 100vh;
-  width: 25vw;
+header{
+  width:400px;
   position: absolute;
-  background-color: var(--body);
-  box-shadow: 0 1px 5px 1px var(--shadow);
   overflow: auto;
-  padding-right: 5px;
+  left: 0px;
+}
+
+.info_area {
+  overflow: auto;
+  box-shadow: 0 1px 5px 1px var(--shadow);
+display: inline;
+}
+
+.content_info_area{
+  overflow: auto;
+  background-color: var(--body);
+  height: calc(100vh - 60px);
+
+}
+.info_area.show {
+display: none;
 }
 
 .content_header {
@@ -39,7 +52,22 @@ header {
   position: sticky;
   top: 0;
   background-color: var(--body);
+  box-shadow: 0 1px 5px 1px var(--shadow);
+  background-color: var(--body);
 }
+
+.menu_lust{
+  width: 40px;
+  margin-left: 10px;
+}
+
+.menu_lust svg{
+  width: 30px;
+  height: 30px;
+cursor: pointer;
+fill: rgb(82, 75, 75);
+}
+
 
 .logo {
   font-size: 2rem;
@@ -100,22 +128,22 @@ header {
   height: 100%;
 }
 
-.info_area {
-  overflow: auto;
-}
 
 .line_info {
   padding: 0 5px;
+  
 }
 
 .img_search {
   width: 100%;
-  height: 40%;
+ height: 300px;
   padding: 0.5rem;
 }
 
 .img_search img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 0.5rem;
 }
 .info_area-state {
@@ -177,14 +205,32 @@ header {
   font-size: 1.5rem;
 }
 
-.header::-webkit-scrollbar {
+.content_info_area::-webkit-scrollbar {
   width: 10px;
 }
 
-.header::-webkit-scrollbar-track {
+.content_info_area::-webkit-scrollbar-track {
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  background: var(--body);
 }
 
-.header::-webkit-scrollbar-thumb {
+.content_info_area::-webkit-scrollbar-thumb {
   background: rgb(136, 133, 133);
+}
+
+
+
+@media screen and (max-width: 500px) {
+  header{
+    width:330px;
+  }
+
+  .info_area_weather-icon {
+    width: 65px;
+    height: 55px;
+  }
+
+  .img_search {
+    height: 200px;
+  }
 }
