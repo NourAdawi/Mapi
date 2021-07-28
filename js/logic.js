@@ -34,7 +34,7 @@ function getImg(query) {
   getRequest(url, (data) => {
     main_img_top.src = data.results[0].urls.regular;
     removeChild(container_imgs);
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i < 10; i++) {
       let img = document.createElement("img");
       img.src = data.results[i].urls.regular;
       container_imgs.appendChild(img);
