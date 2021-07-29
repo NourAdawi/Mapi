@@ -13,7 +13,10 @@ const info_area = document.querySelector(".info_area");
 
 searchBtn.addEventListener("click", () => {
   let query = searchQuery.value;
-  info_area.classList.add('show')
+  if (!query){
+    
+    } 
+  info_area.classList.remove('show')
   let url = `https://nominatim.openstreetmap.org/search.php?q=${query}&format=jsonv2`;
   getRequest(url, (data) => {
     let lat = data[0].lat;
@@ -30,3 +33,9 @@ searchBtn.addEventListener("click", () => {
     photoText.textContent = `Photos from ${query}`;
   });
 });
+
+
+menu_lust.addEventListener('click',()=>{
+  info_area.classList.toggle('show')
+})
+
