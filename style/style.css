@@ -39,6 +39,15 @@ display: inline;
   height: calc(100vh - 60px);
 
 }
+
+
+
+
+
+
+
+
+
 .info_area.show {
 display: none;
 }
@@ -78,16 +87,33 @@ fill: rgb(82, 75, 75);
 
 .search {
   display: flex;
-  background-color: #fff;
+  background: #fff;
   height: 40px;
   width: 500px;
   border-radius: 20px;
   box-shadow: 0 1px 5px 1px var(--shadow);
+
 }
+
+.search.error{
+  border: 2px solid red;
+  animation: moveError .3s ease-in-out;
+}
+@keyframes moveError{
+  0%{transform: translateX(-10px);}
+  20%{transform: translateX(10px);}
+  40%{transform: translateX(-10px);}
+  60%{transform: translateX(10px);}
+  80%{transform: translateX(-10px);}
+  100%{transform: translateX(10px);}
+}
+
+
 
 .input_search {
   height: 100%;
   width: 100%;
+  background: none;
 }
 
 .value_search {
@@ -98,6 +124,7 @@ fill: rgb(82, 75, 75);
   border: none;
   padding-left: 1rem;
   font-size: 1rem;
+  background: none;
 }
 
 .submit_search {

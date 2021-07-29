@@ -1,3 +1,4 @@
+//powered by team scorpion
 // make XML request
 const getRequest = (url, cb) => {
   const xhr = new XMLHttpRequest();
@@ -11,7 +12,7 @@ const getRequest = (url, cb) => {
         cityName.textContent = "No such location";
         photoText.remove();
         weatherImage.remove();
-        main_img_top.src =
+        mainImgTop.src =
           "https://www.easyredir.com/images/blog/error-404-not-found.c106c575e85509b926855247b4b7f50514f0297d2c350ecee9bc93f04914f9d3.jpg";
       }
     }
@@ -31,12 +32,12 @@ function removeChild(parent) {
 function getImg(query) {
   let url = `https://api.unsplash.com/search/photos?query=${query}&client_id=WC50gXbaEOyoD0ivn2KKie6Zi92i4yqvzKxDJxVgUqs`;
   getRequest(url, (data) => {
-    main_img_top.src = data.results[0].urls.regular;
-    removeChild(container_imgs);
+    mainImgTop.src = data.results[0].urls.regular;
+    removeChild(containerImgs);
     for (let i = 1; i < 10; i++) {
       let img = document.createElement("img");
       img.src = data.results[i].urls.regular;
-      container_imgs.appendChild(img);
+      containerImgs.appendChild(img);
     }
   });
 }
