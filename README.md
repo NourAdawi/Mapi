@@ -12,7 +12,7 @@
 * [Ibrahim Joma'a](https://github.com/divluffy)
 * [Nour Adawi](https://github.com/NourAdawi)
 #### Project Access
-[View Demo](https://gsg-g10.github.io/Mapi-Team2) . [Report Bug](https://github.com/GSG-G10/Mapi/issues) . [Request Feature](https://github.com/GSG-G10/Mapi/issues)
+[View Demo](https://nouradawi.github.io/Mapi/) . [Report Bug](https://github.com/GSG-G10/Mapi/issues) . [Request Feature](https://github.com/GSG-G10/Mapi/issues)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
